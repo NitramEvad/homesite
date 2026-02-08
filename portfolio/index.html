@@ -94,7 +94,7 @@
     <div class="bio-preview">
       <div class="bio-preview-text">
         <p>
-          I started this site when learning to code back in 2018, with the domain name <i>Tookay.net</i> being a reference to the ever-present background music of <a href="#" class="tookay-link" onclick="document.getElementById('tookay-modal').classList.add('active'); return false;">Too-kay</a> (the Southeast Asian word for geckos) in Cambodia, where I lived/worked at the time. Also a bit of a play on the year 2000, which is when I first travelled extensively in the region.
+          I started this site when learning to code back in 2018, with the domain name <i>Tookay.net</i> being a reference to the ever-present background music of <a href="#" class="tookay-link" onclick="var m=document.getElementById('tookay-modal');m.classList.add('active');m.querySelector('iframe').src=m.querySelector('iframe').dataset.src; return false;">Too-kay</a> (the Southeast Asian word for geckos) in Cambodia, where I lived/worked at the time. Also a bit of a play on the year 2000, which is when I first travelled extensively in the region.
 
           I'm a developer and university administrator/manager who enjoys building useful tools and applications for the web, from score trackers to full-stack apps. Now playing extensively with AI development tools.
         </p>
@@ -129,10 +129,10 @@
   </script>
 
   <!-- Too-kay YouTube Modal -->
-  <div id="tookay-modal" class="video-modal" onclick="if(event.target===this){this.classList.remove('active');this.querySelector('iframe').src=this.querySelector('iframe').src;}">
+  <div id="tookay-modal" class="video-modal" onclick="if(event.target===this){this.classList.remove('active');this.querySelector('iframe').src='';}">
     <div class="video-modal-content">
-      <button class="video-modal-close" onclick="var m=document.getElementById('tookay-modal');m.classList.remove('active');m.querySelector('iframe').src=m.querySelector('iframe').src;">&times;</button>
-      <iframe src="https://www.youtube.com/embed/-U1r-Cgmdvg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <button class="video-modal-close" onclick="var m=document.getElementById('tookay-modal');m.classList.remove('active');m.querySelector('iframe').src='';">&times;</button>
+      <iframe data-src="https://www.youtube.com/embed/-U1r-Cgmdvg" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 
