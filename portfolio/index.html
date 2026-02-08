@@ -20,6 +20,12 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="bio.html">Bio</a></li>
       <li><a href="https://github.com/NitramEvad" target="_blank" rel="noopener">GitHub</a></li>
+      <li>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </li>
     </ul>
   </nav>
 
@@ -64,12 +70,12 @@
             A real-time Scrabble score tracker, to reduce disputes between Nicole and I during late evening scrabble matches. Tracks games, keeps a turn history and head-to-head records, with AI-generated commentary while crowning winners with poems and heckling slow players.
           </p>
           <div class="tech-tags">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">Supabase</span>
-            <span class="tech-tag">Claude API</span>
-            <span class="tech-tag">PWA</span>
+            <a class="tech-tag" href="https://react.dev" target="_blank" rel="noopener" title="A JavaScript library for building user interfaces">React</a>
+            <a class="tech-tag" href="https://www.typescriptlang.org" target="_blank" rel="noopener" title="A strongly typed programming language that builds on JavaScript">TypeScript</a>
+            <a class="tech-tag" href="https://tailwindcss.com" target="_blank" rel="noopener" title="A utility-first CSS framework for rapid UI development">Tailwind CSS</a>
+            <a class="tech-tag" href="https://supabase.com" target="_blank" rel="noopener" title="An open-source Firebase alternative with a Postgres database">Supabase</a>
+            <a class="tech-tag" href="https://docs.anthropic.com" target="_blank" rel="noopener" title="Anthropic's AI assistant API for building with Claude">Claude API</a>
+            <a class="tech-tag" href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" target="_blank" rel="noopener" title="Progressive Web App — web apps that work like native apps on any device">PWA</a>
           </div>
           <div class="project-links">
             <a href="https://scrabblescore.tookay.net" target="_blank" rel="noopener">Live Site &rarr;</a>
@@ -88,8 +94,8 @@
     <div class="bio-preview">
       <div class="bio-preview-text">
         <p>
-          I started this site when learning to code back in 2018, with the domain name <i>Tookay.net</i> being a reference to the ever-present background music of Too-kay (the Southeast Asian word for geckos) in Cambodia, where I lived/worked at the time. Also a bit of a play on the year 2000, which is when I first travelled extensively in the region.
-          
+          I started this site when learning to code back in 2018, with the domain name <i>Tookay.net</i> being a reference to the ever-present background music of <a href="#" class="tookay-link" onclick="document.getElementById('tookay-modal').classList.add('active'); return false;">Too-kay</a> (the Southeast Asian word for geckos) in Cambodia, where I lived/worked at the time. Also a bit of a play on the year 2000, which is when I first travelled extensively in the region.
+
           I'm a developer and university administrator/manager who enjoys building useful tools and applications for the web, from score trackers to full-stack apps. Now playing extensively with AI development tools.
         </p>
         <a href="bio.html" class="btn btn-outline">Read Full Bio &rarr;</a>
@@ -109,6 +115,26 @@
     </div>
     <p>&copy; 2026 Tookay.net. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      var isLight = document.documentElement.classList.toggle('light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    }
+    (function() {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
+
+  <!-- Too-kay YouTube Modal -->
+  <div id="tookay-modal" class="video-modal" onclick="if(event.target===this){this.classList.remove('active');this.querySelector('iframe').src=this.querySelector('iframe').src;}">
+    <div class="video-modal-content">
+      <button class="video-modal-close" onclick="var m=document.getElementById('tookay-modal');m.classList.remove('active');m.querySelector('iframe').src=m.querySelector('iframe').src;">&times;</button>
+      <iframe src="https://www.youtube.com/embed/-U1r-Cgmdvg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
 
 </body>
 </html>
