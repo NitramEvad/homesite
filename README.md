@@ -1,3 +1,4 @@
 # My Homepage
-Basic repo containing homepage files for automating FTP to hosting site.
-<!-- <img src="./portfolio/assets/logo1.jpeg" alt="Neon gecko with headphones in front of a computer" width="100%" align="center" /> -->
+<p>Basic repo containing homepage files for automating FTP to hosting site.</p>
+
+<img src="/portfolio/assets/logo1.jpeg" alt="A neon, cartoonish, slightly psychadelic looking, gecko with headphones, looking at the viewer with a computer behind it" width="60%" align="center" />
