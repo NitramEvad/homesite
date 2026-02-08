@@ -113,6 +113,7 @@ nav {
   padding: 6rem 2rem 4rem;
   position: relative;
   overflow: hidden;
+  max-width: none;
 }
 
 .hero::before {
@@ -480,12 +481,14 @@ a.tech-tag:hover {
 
 .video-modal.active {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .video-modal-content {
   position: relative;
   width: 90%;
-  max-width: 720px;
+  max-width: 960px;
   aspect-ratio: 16 / 9;
   background: #000;
   border-radius: 12px;
@@ -551,11 +554,11 @@ footer .footer-links {
   border-color: var(--accent-light);
 }
 
-.icon-moon { display: none; }
-.icon-sun { display: block; }
+.theme-toggle .icon-moon { display: none; }
+.theme-toggle .icon-sun { display: inline; }
 
-:root.light .icon-moon { display: block; }
-:root.light .icon-sun { display: none; }
+:root.light .theme-toggle .icon-moon { display: inline; }
+:root.light .theme-toggle .icon-sun { display: none; }
 
 /* Light Mode Overrides */
 :root.light nav {
